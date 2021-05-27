@@ -1,0 +1,88 @@
+<script>
+  let fnam;
+  let lnam;
+  let num;
+  let res;
+  async function display() {
+    var year = new Date().getFullYear();
+    res = year - num;
+  }
+</script>
+
+<style>
+  main {
+    padding: 100px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-image: url("https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/powder-pastel-background-design-noirty-designs.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .sub {
+    border-radius: 5px;
+    background-color: cadetblue;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 25px;
+  }
+  .out {
+    width: 450px;
+    height: 40px;
+    background-color: red;
+    position: relative;
+    animation: myfirst 5s linear 2s infinite alternate;
+  }
+
+  @keyframes myfirst {
+    0% {
+      background-color: red;
+      left: 0px;
+      top: 0px;
+    }
+    25% {
+      background-color: yellow;
+      left: 200px;
+      top: 0px;
+    }
+    50% {
+      background-color: blue;
+      left: 200px;
+      top: 200px;
+    }
+    75% {
+      background-color: green;
+      left: 0px;
+      top: 200px;
+    }
+    100% {
+      background-color: red;
+      left: 0px;
+      top: 0px;
+    }
+  }
+  div {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 40px;
+  }
+  p {
+    font-size: 20px;
+  }
+</style>
+
+<main>
+<div>Age Calculator</div>
+<head><title>Age Calculator</title></head>
+	<p>Hey user!</p>
+	<p>Get ready to see the magic now!</p>
+  <h4>First Name:</h4>
+  
+  <input class="fn" bind:value={fnam} type="text" id="fname" name="fname" placeholder="Enter your first name" ><br><br>
+ 
+ <h4>Last Name:</h4>
+  <input class="ln" bind:value={lnam} type="text" id="lname" name="lname" placeholder="Enter your last name" ><br><br>
+
+   <h4>Birth Year:</h4>
+  <input class="dat" bind:value={num} type="number" min="1980" max="2021" id="birthday" placeholder="Enter Birth Year" name="birthday"><br><br><br>
+  <button class="sub" on:click={display}>Click</button>
+  <h3 class="out">Dear {fnam} , now you're {res}!!! </h3><br>
+ 
+</main>
